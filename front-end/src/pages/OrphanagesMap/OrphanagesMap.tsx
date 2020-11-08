@@ -1,13 +1,16 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
 import { FiPlus } from  'react-icons/fi';
-import { MapContainer, TileLayer } from 'react-leaflet';
+import { Map, TileLayer } from 'react-leaflet';
 
-import mapMarkerImg from '../assets/img/map-pin.svg';
+import 'leaflet/dist/leaflet.css';
 
-import '../styles/pages/orphanages-map.css';
+import mapMarkerImg from '../../assets/img/map-pin.svg';
+
+import "./orphanages-map.css";
 
 function OrphanagesMap(){
+
     return(
         <div id="page-map">
             <aside>
@@ -18,18 +21,19 @@ function OrphanagesMap(){
                     <p>Muitas crianças estão esperando a sua visita :)</p>
                 </header>
                 <footer>
-                    <strong>Ipatinga</strong>
+                    <strong>Viçosa</strong>
                     <span>Minas Gerais</span>
                 </footer>
             </aside>
-            <MapContainer 
-                center={[-20.7408465, -42.8735319]}
-                zoom={15}
-                style={{ width: '100%', height: '100%' }}
-            >
-                <TileLayer url="https://a.tile.open.streetmap.org/{z}/{x}/{y}.png" />
-            </MapContainer>
 
+            <Map 
+                center={[-20.7527294, -42.8767042]} 
+                zoom={15} 
+                style={{ width: '100%', height: '100%' }}>
+
+                <TileLayer url={`https://api.mapbox.com/styles/v1/mapbox/light-v10/tiles/256/{z}/{x}/{y}@2x?access_token=${process.env.REACT_APP_MAPBOX_TOKEN}`}/>
+            </Map>
+            
             <Link to="" className="create-orphanage">
                 <FiPlus size={32} color="#fff" />
             </Link>

@@ -2,10 +2,10 @@ import React from 'react';
 import { FiArrowRight } from 'react-icons/fi';
 import { Link } from 'react-router-dom';
 
-import '../styles/global.css';
-import '../styles/pages/landing.css';
+import '../../styles/global.css';
+import './landing.css';
 
-import logoImg from "../assets/img/logo.svg";
+import logoImg from "../../assets/img/logo.svg";;
 
 function Landing(){
     return(
@@ -19,7 +19,7 @@ function Landing(){
                 </main>
 
                 <div className="location">
-                <strong>Ipatinga</strong>
+                <strong>Viçosa</strong>
                 <span>Minas Gerais</span>
                 </div>
 
